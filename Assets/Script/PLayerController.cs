@@ -22,4 +22,12 @@ public class PLayerController : MonoBehaviour
 
         rb.AddForce(movement * speed);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pick up"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
